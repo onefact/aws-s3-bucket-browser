@@ -133,3 +133,11 @@ in this [tutorial](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-o
   </CORSRule>
 </CORSConfiguration>
 ```
+
+## Configuration specific to data.payless.health
+1. Create SSL certificate in AWS Certificate Manager for `data.payless.health`
+- Need to validate domain ownership using DNS with name and value from AWS Certificate Manager
+2. Create Cloudfront distribution for `s3://payless.health` bucket.
+3. Add `CNAME` record in DNS for `data.payless.health` to Cloudfront distribution domain name.
+
+Default root object - optional: `index.html`. This is the default object that CloudFront returns when the viewer requests the root URL for your distribution. If you don't specify a default root object, CloudFront returns an HTTP 403 (Forbidden) error.
