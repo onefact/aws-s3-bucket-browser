@@ -141,3 +141,8 @@ in this [tutorial](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-o
 3. Add `CNAME` record in DNS for `data.payless.health` to Cloudfront distribution domain name.
 
 Default root object - optional: `index.html`. This is the default object that CloudFront returns when the viewer requests the root URL for your distribution. If you don't specify a default root object, CloudFront returns an HTTP 403 (Forbidden) error.
+
+Invalidate the cache if Cloudfront caching causes errors: `aws cloudfront create-invalidation --distribution-id {$DISTRIBUTION_ID}
+ --paths "/index.html"` or
+
+ 

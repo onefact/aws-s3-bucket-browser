@@ -7,12 +7,12 @@
   <script>
     const config = {
       title: 'Payless Health Data',
-      subtitle: 'made with ♥ by One Fact Foundation. Learn more at www.payless.health and reach out at hello@onefact.org.',
+      subtitle: 'made with ♥ by One Fact Foundation; email at hello@onefact.org. The 4000 hospital price sheets in this cloud storage bucket can be analyzed using the notebook at https://bit.ly/paylesscuny.',
       logo: 'https://www.onefact.org/images/share.png',
       favicon: 'https://www.onefact.org/favicon.ico',
       primaryColor: '#808080',
 
-      bucketUrl: 'https://s3.us-east-1.amazonaws.com/payless.health',
+      bucketUrl: 'https://s3-external-1.amazonaws.com/payless.health/',
       // If bucketUrl is undefined, this script tries to determine bucket Rest API URL from this file location itself.
       //   This will only work for locations like these
       //   * https://s3.BUCKET-REGION.amazonaws.com/BUCKET-NAME/index.html
@@ -27,14 +27,14 @@
       keyExcludePatterns: [/^index\.html$/],
       pageSize: 50,
 
-      bucketMaskUrl: undefined,
+      bucketMaskUrl: 'https://data.payless.health',
       // If bucketMaskUrl is set, file urls will be changed from ${bucketUrl}/${file} to ${bucketMaskUrl}/${file}
       //   bucketMaskUrl: 'https://example.org'
       //     => https://example.org/foo/bar.txt
       //   bucketMaskUrl: document.location.origin
       //     => ${document.location.origin}/foo/bar.txt
 
-      defaultOrder: 'name-asc' // (name|size|dateModified)-(asc|desc)
+      defaultOrder: 'dateModified' // (name|size|dateModified)-(asc|desc)
     }
   </script>
 

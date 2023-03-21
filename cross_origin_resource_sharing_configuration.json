@@ -7,7 +7,7 @@
             "GET"
         ],
         "AllowedOrigins": [
-            "https://www.payless.health"
+            "https://data.payless.health"
         ],
         "ExposeHeaders": [
             "x-amz-server-side-encryption",
